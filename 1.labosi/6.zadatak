@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args){
+        int a, b, sum, raz, um, div, rez_d;
+        Scanner my_scanner = new Scanner(System.in);
+        System.out.println("Unesite prvi broj: ");
+        a = my_scanner.nextInt();
+        System.out.println("Unesite drugi broj: ");
+        b = my_scanner.nextInt();
+
+        my_scanner.close();
+        
+        sum = (a + b);
+        raz = (a - b);
+        um = (a * b);
+        div = (a / b);
+        rez_d = (a % b);
+
+        System.out.println("Rezultat sume je:" +sum);
+        System.out.println("Rezultat razlike je:" +raz);
+        System.out.println("Rezultat umnoska je:" +um);
+        System.out.println("Rezultat dijeljenja je:" +div);
+        System.out.println("Ostatak dijeljenja je:" +rez_d);
+    }
+}
