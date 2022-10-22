@@ -1,0 +1,16 @@
+//1.nacin
+public class Main {
+    public static void main(String[] args){
+        System.out.println(50/3);
+    }
+}
+
+//2.nacin
+public class Main {
+    public static void main(String[] args){
+        int a = 50, b = 3, div;
+        div = (50/3);
+
+        System.out.println("Rezultat je: "+div);
+    }
+}
