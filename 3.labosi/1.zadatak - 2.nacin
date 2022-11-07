@@ -1,0 +1,161 @@
+package zadPrvi;
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void unosVektora(int n, int vektor[])
+    {
+        Scanner input = new Scanner(System.in);
+        for(int i = 0; i < n; i++)
+        {
+            System.out.println("Unesite " +(i+1)+ ". element vektora: ");
+            vektor[i] = input.nextInt();
+        }
+    }    
+     public static void unosMatrice(int m, int array2D[][] )
+     {
+        Scanner input = new Scanner(System.in);
+        for(int i = 0; i < m; i++)
+        {
+            for(int j = 0; j < m; j++)
+            {    
+            System.out.println("Unesite element matrice: ");
+            array2D[i][j] = input.nextInt();
+            }
+        }
+    }    
+     public static float aritmetickaSredinaSporedneDijagonale(int m, int array2D[][] )
+     {
+         float rezultat = 0;
+         for(int i = 0; i < m; i++)
+        {
+            for(int j = 0; j < m; j++)
+            {    
+                if((i+j) == 2) rezultat += array2D[i][j];
+            }
+        }
+         return rezultat /= m;
+    }
+     
+     public static int sumaNeparnihElemenata(int m, int array2D[][])
+     {
+        int rezultat = 0;
+         for(int i = 0; i < m; i++)
+         {
+             if((array2D[0][i]% 2) != 0) rezultat += array2D[0][i];
+         }
+         for(int i = 1; i < m; i++)
+         {
+             if((array2D[i][0]% 2) != 0) rezultat += array2D[i][0];
+         }   
+         return rezultat;
+     }
+     
+    public static void ispisBrojevaNaParnimIndeksima(int n, int vektor[])
+    {
+        System.out.println("Elementi na parnim indeksima su: ");
+        for(int i = 0; i < n; i++)
+        {
+            if(i%2 == 1) continue;
+            else System.out.print(vektor[i]+ " ");
+        }
+    }
+     
+    public static void main(String[] args) 
+    {
+        int choice = 0, row = 0, n = 0;
+        boolean provjeraVektora = false, provjeraMatrice = false;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Unesite duljinu vektora: ");
+        do
+        {
+            try
+            {
+                n = input.nextInt();
+            }
+            catch(Exception greska){
+                System.out.println("GRESKA");
+                input.next();
+            }
+        }while(n < 2 || n > 10);
+        
+        int vektor[] = new int[n];
+        
+         System.out.println("Unesite duljinu matrice: ");
+         
+        do
+        {
+            try
+            {
+                row = input.nextInt();
+            }
+            catch(Exception greska)
+            {
+                System.out.println("GRESKA");
+            }
+        }while(row < 1 || row > 5);
+        
+        int array2D[][] = new int[row][row];
+        
+        while(choice!=6)
+        {
+            System.out.println();
+            System.out.println("1. Unesi elemenata vektora");
+            System.out.println("2. Unesi elemenata matrice");
+            System.out.println("3. Izracun aritmeticke sredine sporedne dijagonale");
+            System.out.println("4. Izracun sume neparnih elemenata 1.retka i 1.stupca");
+            System.out.println("5. Ispis svih elemenata na parnim indeksima");
+            System.out.println("6. Kraj programa");
+            choice = input.nextInt();
+            
+        switch(choice)
+        {
+            case 1:
+              unosVektora(n, vektor);
+              provjeraVektora = true;
+              break;
+              
+            case 2:
+              unosMatrice(row, array2D);
+              provjeraMatrice = true;
+              break;
+              
+            case 3:
+                if(provjeraMatrice == false)
+                {
+                    System.out.println("Greska. Prvo morate unijeti elemente matrice!");
+                    break;
+                }
+                System.out.println("Aritmeticka sredina sporedne dijagonale je: " +aritmetickaSredinaSporedneDijagonale(row,array2D));
+                break;
+                
+            case 4:
+                if(provjeraMatrice == false)
+                {
+                    System.out.println("Greska. Prvo morate unijeti elemente matrice!");
+                    break;
+                }
+                if((sumaNeparnihElemenata(row,array2D))==0) System.out.println("Nema neparnih elemenata!");
+                else System.out.println("Suma neparnih elemenata je: " +sumaNeparnihElemenata(row,array2D));
+                break;
+                
+            case 5:
+                if(provjeraVektora == false)
+                {
+                    System.out.println("Greska. Prvo morate unijeti elemente vektora!");
+                    break;
+                }
+                ispisBrojevaNaParnimIndeksima(n, vektor);
+                break;
+                
+            case 6:
+                System.out.println("Kraj programa!");
+                break;
+                
+            default:
+                System.out.println("Pogresan odabir.");
+                break;
+            }
+        }
+    }
+}
