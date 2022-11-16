@@ -1,4 +1,4 @@
-package zadPrvi;
+package zadDrugi;
 
 import java.io.Serializable;
 
@@ -12,6 +12,10 @@ public class Student implements Serializable{
     private int godina;
     private double prosjecna_ocjena;
 
+    public class Main 
+{
+    public static void main(String[] args)
+    {
 
     public Student(int maticniBroj, String ime, String prezime, String fakultet, String smjer, int godina, double prosjecna_ocjena) {
         this.maticniBroj = maticniBroj;
