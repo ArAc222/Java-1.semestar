@@ -1,0 +1,17 @@
+package labosi6;
+
+/**
+ *
+ * @author luka2
+ */
+public class Konj extends Zivotinja{
+    
+    Konj(String vrsta){
+        this.vrsta = vrsta;
+    }
+    
+    @Override
+    public void kreciSe(){
+         System.out.println("Trcim");
+    }
+}
