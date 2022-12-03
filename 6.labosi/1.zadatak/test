@@ -1,0 +1,24 @@
+package labosi6;
+
+
+public class Test extends Zivotinja{
+    public static void main(String[] args){
+        
+        System.out.println("Vrste zivotinja su:");
+        
+        Konj k = new Konj("Lipicaner");
+        System.out.println(k.vrsta);
+        
+        Riba r = new Riba("Som");
+        System.out.println(r.vrsta);
+        
+        Ptica p = new Ptica("Lastavica");
+        System.out.println(p.vrsta);
+        
+        System.out.println("Kretnje zivotinja su:");
+        
+        k.kreciSe();
+        r.kreciSe();
+        p.kreciSe();
+    }
+}
