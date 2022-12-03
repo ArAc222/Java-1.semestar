@@ -1,0 +1,17 @@
+package labosi6;
+
+/**
+ *
+ * @author luka2
+ */
+public class Riba extends Zivotinja{
+    
+    Riba(String vrsta){
+        this.vrsta = vrsta;
+    }
+    
+    @Override
+    public void kreciSe(){
+         System.out.println("Plivam");
+}
+}
