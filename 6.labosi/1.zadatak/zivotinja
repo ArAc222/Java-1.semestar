@@ -1,0 +1,11 @@
+package labosi6;
+
+
+public class Zivotinja {
+    
+    protected String vrsta;
+    
+    public void kreciSe(){
+         System.out.println("Zivotinja se krece");
+    }
+}
